@@ -54,7 +54,13 @@ def generate_model(w=None, depth=1):
 
 def ann_learner(x, y):
 	model = generate_model()
-	history = model.fit(x, y, epochs=50, validation_split=0.1, verbose=False)
+	with st.spinner("Training... ANN model"):
+		history = model.fit(x, y, epochs=50, validation_split=0.1, verbose=False)
+	st.success("Training Completed.")
+	y_pred = model.predict(x)
+	y_pred = y_pred.flatten()
+	y_pred = np.array([1 if i>0.5 else 0 for i in y_pred])
+	plot_graph(x, y_pred)
 	return history.history
 
 def federated_learner(x, y, n=2, depth=1):
@@ -84,6 +90,10 @@ def federated_learner(x, y, n=2, depth=1):
 		history['val_acc'].append(va)
 		history['val_loss'].append(vl)
 		textPlaceholder.text("Aggregation Complete.")
+	y_pred = central_model.predict(x)
+	y_pred = y_pred.flatten()
+	y_pred = np.array([1 if i>0.5 else 0 for i in y_pred])
+	plot_graph(x, y_pred)
 	return history
 
 def training_plot(history):
