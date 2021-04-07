@@ -24,4 +24,4 @@ The paper proves the importance of hand-crafted features, they are able to suppo
 
 They are able to prove their statement by showing the test results for handcrafted scatternet predictions and previous work employing the same epsilon values.
 
-![Image 1](./images/img1.png)
+![Image 1](./images/img1.PNG)
