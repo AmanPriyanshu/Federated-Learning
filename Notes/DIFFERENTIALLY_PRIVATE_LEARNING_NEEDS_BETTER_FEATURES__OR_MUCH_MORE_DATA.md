@@ -34,3 +34,19 @@ They are able to emperically support their statement by showing the test results
 Question is how to overcome performance gap between handcrafted and automated feature learning.
 
 1. More data: They are able to reinforce the claim that more data could be an answer to outperforming handcrafted features. 
+2. Differentially Private Transfer Learning: can display strong privacy at only a minor cost in accuracy, making this the more favourable option (CIFAR-10 model to 92.7% accuracy for a DP budget of ε = 2).
+
+## Aim:
+
+Handcrafted features can allow easier learning than end-to-end deep learning.
+
+### Scattering Networks:
+
+The use of data independent filters for feature extraction allows us to skip the step of end-to-end learning and acheive greater performance with just shallow networks.
+
+### Differentially Private ScatterNet Classifiers:
+
+#### DP-SGD algorithm:
+1. Batches of size `B` are sampled randomly.
+2. Gradients clipped to Norm `C`.
+3. Gaussian noise of variance σ<sup>2</sup>C<sup>2</sup>/B<sup>2</sup> is added to the mean gradient
