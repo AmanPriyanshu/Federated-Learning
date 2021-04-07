@@ -50,3 +50,18 @@ The use of data independent filters for feature extraction allows us to skip the
 1. Batches of size `B` are sampled randomly.
 2. Gradients clipped to Norm `C`.
 3. Gaussian noise of variance (σ<sup>2</sup>C<sup>2</sup>/B<sup>2</sup>) is added to the mean gradient
+
+#### Normalizing 
+Normalizing is important for high performance output. Two approaches are considered:
+1. Group Normalization, whereby channels of `S(x)` are split into G groups and normalized.
+2. Data Normalization, whereby each channel is normalized which incurs a privacy cost. - Performs better
+
+## Experimental Setup:
+
+1. They are able to show that using ScatterNets is convenient and robust to hyperparmeter searches. They also talk about privacy leakage due to hyperparameter search, as that iself is based on the data provided. 
+2. Much more accurate than end-to-end learning.
+
+## Why do these conclusions and results happen?
+
+1. Smaller Models are not easier to train: ScatterNets are smaller models, but that doesn't warrant their high perfomance rather ScatterNets tend to have higher number of parameters than typical/comparable CNNs.
+2. Models with handcrafted features converge faster without privacy: DP-SGD requires a lower LR to average out noise. With a large learning rate, a disparity can be seen between when privacy is utilized and when it is not. However, it is the opposite when we talk about a smaller LR, as both of them converge at roughly the sametime. 
