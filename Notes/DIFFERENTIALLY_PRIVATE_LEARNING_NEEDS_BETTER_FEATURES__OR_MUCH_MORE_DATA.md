@@ -21,4 +21,7 @@ The paper proves the importance of hand-crafted features, they are able to suppo
 
 * On CIFAR-10 they exceed the accuracy reported by Papernot et al. (2020b) while simultaneously improving the provable DP-guarantee by 130 times.
 * On MNIST, they match the privacy-utility guarantees obtained with PATE (Papernot et al., 2018) without requiring access to any public data.
-* 
+
+They are able to prove their statement by showing the test results for handcrafted scatternet predictions and previous work employing the same epsilon values.
+
+![Image 1](./images/img1.png)
