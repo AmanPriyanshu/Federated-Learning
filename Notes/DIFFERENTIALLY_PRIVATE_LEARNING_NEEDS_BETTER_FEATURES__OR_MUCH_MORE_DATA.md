@@ -49,4 +49,4 @@ The use of data independent filters for feature extraction allows us to skip the
 #### DP-SGD algorithm:
 1. Batches of size `B` are sampled randomly.
 2. Gradients clipped to Norm `C`.
-3. Gaussian noise of variance σ<sup>2</sup>C<sup>2</sup>/B<sup>2</sup> is added to the mean gradient
+3. Gaussian noise of variance `σ`<sup>`2`</sup>`C`<sup>`2`</sup>`/B`<sup>`2`</sup> is added to the mean gradient
