@@ -65,3 +65,11 @@ Normalizing is important for high performance output. Two approaches are conside
 
 1. Smaller Models are not easier to train: ScatterNets are smaller models, but that doesn't warrant their high perfomance rather ScatterNets tend to have higher number of parameters than typical/comparable CNNs.
 2. Models with handcrafted features converge faster without privacy: DP-SGD requires a lower LR to average out noise. With a large learning rate, a disparity can be seen between when privacy is utilized and when it is not. However, it is the opposite when we talk about a smaller LR, as both of them converge at roughly the sametime. 
+
+## Conclusions:
+
+1. Access to a larger private training set
+2. Access to a public image dataset from a different distribution
+
+1. Larger private datasets allow DP-SGD to be run for more steps at a fixed privacy budget and noise level.
+2. Transfer Learning: better features from public data.
